@@ -1,5 +1,4 @@
-import {bootstrap} from 'angular2/platform/browser';
-
+import {bootstrap} from '@angular/platform-browser-dynamic';
 /*
  * Platform and Environment
  * our providers/directives/pipes
@@ -22,7 +21,7 @@ export function main(initialHmrState?: any): Promise<any> {
   ])
     .catch(err => console.error(err));
 }
-console.log(module.id);
+
 if ('development' === ENV && HMR === true) {
   let ngHmr = require('angular2-hmr');
   ngHmr.hotModuleReplacement(main, module);

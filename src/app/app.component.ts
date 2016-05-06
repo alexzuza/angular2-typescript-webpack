@@ -1,7 +1,7 @@
-import {Component, OnInit, NgZone} from 'angular2/core';
-import {ControlGroup, FormBuilder, Validators} from 'angular2/common';
+import {Component, OnInit, NgZone} from '@angular/core';
+import {ControlGroup, FormBuilder, Validators} from '@angular/common';
 import {Subject, Observable}  from 'rxjs/Rx';
-import {RouteConfig, Router} from 'angular2/router';
+import {RouteConfig, Router} from '@angular/router-deprecated';
 
 
 @Component({
@@ -16,7 +16,7 @@ import {RouteConfig, Router} from 'angular2/router';
 })
 
 export class App {
-  arr: Array<number> = [4,5,6,6];
+  arr: Array<number> = [4,5,6];
   constructor() {
     console.clear();
   }

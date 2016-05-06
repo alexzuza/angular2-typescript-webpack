@@ -5,3 +5,7 @@ typings
 *.js
 *.js.map
 !webpack.config.js
+
+# IDE #
+.idea/
+*.swp
