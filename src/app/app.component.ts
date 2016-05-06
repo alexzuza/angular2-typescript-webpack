@@ -1,5 +1,4 @@
 import {Component, OnInit, NgZone} from '@angular/core';
-import {ControlGroup, FormBuilder, Validators} from '@angular/common';
 import {Subject, Observable}  from 'rxjs/Rx';
 import {RouteConfig, Router} from '@angular/router-deprecated';
 

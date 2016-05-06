@@ -7,7 +7,6 @@ export class AppState {
   @HmrState() _state = { };
 
   constructor() {
-
   }
 
   // already return a clone of the current state
@@ -19,7 +18,6 @@ export class AppState {
     throw new Error('do not mutate the `.state` directly');
   }
 
-
   get(prop?: any) {
     // use our state getter for the clone
     const state = this.state;
@@ -30,7 +28,6 @@ export class AppState {
     // internally mutate our state
     return this._state[prop] = value;
   }
-
 
   _clone(object) {
     // simple object clone

@@ -1,6 +1,6 @@
 {
   "name": "angular2-webpack-simple-start",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a Angular2 webpack typescript boilerplate",
   "scripts": {
     "postinstall": "npm run typings",
