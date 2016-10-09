@@ -8,3 +8,4 @@ typings
 
 # IDE #
 .idea/
+.vsconfig/
