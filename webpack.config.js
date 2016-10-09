@@ -30,7 +30,7 @@ module.exports = {
   metadata: METADATA,
 
   entry: {
-    'main': './src/start.ts',
+    'main': './src/main.ts',
     'vendor': './src/vendor.ts'
   },
 
@@ -45,7 +45,9 @@ module.exports = {
 
     sourceMapFilename: '[name].map',
 
-    chunkFilename: '[id].chunk.js'
+    chunkFilename: '[id].chunk.js',
+
+    library: '[name]'
   },
 
   resolve: {
@@ -88,8 +90,15 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      inject: false
     }),
+
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      root('src')
+    ),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: ['main', 'vendor'],
