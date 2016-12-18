@@ -4,7 +4,7 @@ typings
 
 *.js
 *.js.map
-!webpack.config.js
+!webpack.config*js
 
 # IDE #
 .idea/
