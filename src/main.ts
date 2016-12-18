@@ -1,8 +1,11 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootloader } from '@angularclass/hmr';
 
 import { AppModule } from './app';
 
-export function run(appLocalized: any) {
-  platformBrowserDynamic([{provide: 'AppLocalized', useValue: appLocalized }])
+export function run() {
+  platformBrowserDynamic()
     .bootstrapModule(AppModule);
 }
+
+bootloader(run);

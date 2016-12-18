@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <title><%= webpackConfig.metadata.title %></title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= webpackConfig.metadata.title %>">
-    <base href="<%= webpackConfig.metadata.baseUrl %>">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+    <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
 </head>
 <body>
-<my-app>
-</my-app>
-<% if (webpackConfig.metadata.ENV === 'development') { %>
-<!-- Webpack Dev Server reload -->
-<script src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
-<% } %>
-
-<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-<script src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-<% } %>
-
-<script>
-    main.run('Passing server parameters to ngModule with Angular 2 and webpack');
-</script>
+    <my-app>
+    </my-app>
+    <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="/webpack-dev-server.js"></script>
+    <% } %>
 </body>
 </html>
